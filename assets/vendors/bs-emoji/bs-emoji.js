@@ -168,11 +168,11 @@ function AnalyticEmotion(s) {
 			}
 			$('.emotions .container a').click(function(){
 				target.insertText($(this).attr('title'));
-				if($("#friendcircle-comment-textarea").val().length > 1){
-				$("#friendcircle-comment-container").attr("style", "box-shadow: inset 0px 0px 0px 1px #07c160;");
-				$("#friendcircle-comment-submit").addClass("friendcircle-comment-readySubmit");  
-				
-				}
+				var $textarea = $("#friendcircle-comment-textarea");
+if ($textarea.length && $textarea.val().length > 1) {
+    $("#friendcircle-comment-container").attr("style", "box-shadow: inset 0px 0px 0px 1px #07c160;");
+    $("#friendcircle-comment-submit").addClass("friendcircle-comment-readySubmit");
+}
 				$('.emotions').remove();
 			});
 			for(var i = 1; i < emotions[category].length / 72 + 1; ++i){
